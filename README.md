@@ -1,73 +1,62 @@
-# 🌟 LuminaLib | Enterprise Library Management System
+# 🌟 LuminaLib | Enterprise-Grade Library Ecosystem
 
-LuminaLib is a state-of-the-art, cross-platform library management ecosystem that bridges the power of C++ with the elegance of a modern web experience. Built for institutions that demand high performance, security, and a premium user experience.
+LuminaLib is a high-performance, cross-platform library management solution. It bridges the robust logic of a **C++ Terminal UI** with the seamless accessibility of a **Next.js 15 Web Portal**, all powered by a unified **SQLite source of truth**.
 
-![Project Banner](./assets/banner.png)
+## 🚀 Vision & Core Philosophy
+LuminaLib was designed from the ground up to solve the fragmentation in modern library systems. Whether you're an administrator operating via the command line or a student browsing from a mobile device, the data is always synchronized, secure, and blazing fast.
 
-## 🚀 Key Features
+## 🛠️ Key Components
 
-### 🖥️ High-Performance C++ CLI
-- **Vibrant TUI**: Color-coded terminal interface for lightning-fast administrator operations.
-- **Expert Architecture**: Decoupled Data Access Layer (DAL) featuring an abstract interface for infinite persistence flexibility.
-- **Enterprise Security**: Argon-style hashing for all sensitive credentials (Student & Admin).
+### 🖥️ CLI Modern Core (C++/C++14)
+*   **Vibrant TUI**: A colored, frame-based terminal interface for mission-critical operations.
+*   **Abstracted DAL**: A Data Access Layer (DAL) using the `IDataStore` interface, making the system storage-agnostic.
+*   **Hardened Security**: Multi-phase hashing for all user credentials using standard crypto-safe libraries.
+*   **Operational Control**: Built-in 5-book borrow limits, automated fine calculations, and activity logging.
 
-### 🌐 Premium Next.js Web Portal
-- **Scale-Ready**: High-volume book discovery subsystem optimized for **10,000+ titles**.
-- **Real-time Synchronization**: Unified SQLite core ensures CLI and Web data stay in perfect harmony.
-- **Student Dashboard**: One-click **Online Booking**, secure Login/Signup, and fine tracking.
-- **Glassmorphism UI**: Cutting-edge, Awwwards-standard design using Next.js 15 and Tailwind CSS 4.
-
-## 🛠️ Technology Stack
-- **Core**: Modern C++ (C++14)
-- **Persistence**: SQLite (Shared Database Core)
-- **Web Frontend**: Next.js 15 (App Router), TypeScript, Tailwind CSS 4
-- **Web Backend**: Next.js API Routes (Serverless-ready)
-- **UI Library**: Lucide React, Clsx, Glassmorphism Framework
-
-## ⚙️ Installation & Usage
-
-### 🖥️ Running the CLI Base
-1. Ensure `g++` is in your environment PATH.
-2. Run the build script:
-   ```bash
-   .\compile.bat
-   ```
-3. Launch the system:
-   ```bash
-   .\library_system.exe
-   ```
-
-### 🌐 Launching the Web Portal
-1. Navigate to the `web/` directory:
-   ```bash
-   cd web
-   ```
-2. Install dependencies & launch:
-   ```bash
-   npm install
-   npm run dev -- -p 3001
-   ```
-3. Access at: `http://localhost:3001`
+### 🌐 Next.js 15 Web Portal (App Router)
+*   **Massive Scalability**: Sub-second rendering for inventories of **10,000+ books**.
+*   **Modern UI/UX**: Premium **Glassmorphism** design language powered by Tailwind CSS 4.
+*   **Student Self-Service**: One-click **Online Booking**, real-time search, and personal borrow history.
+*   **Responsive Engine**: Fully optimized for Desktop, Tablet, and Mobile ecosystems.
 
 ## 🏗️ Technical Architecture
 
+### Data Symmetry
+The system uses a shared **SQLite Engine** (`data/library.db`). This ensures that a book reserved on the Web Portal is instantly marked as "In Use" in the CLI TUI.
+
 ```mermaid
-graph TD
-    subgraph WEB [Web Portal]
-        UI[Next.js Frontend] --> API[API Routes]
-    end
-    
-    subgraph CLI [Terminal System]
-        TUI[C++ TUI] --> DAL[IDataStore Layer]
-    end
-    
-    subgraph DB [Shared Source of Truth]
-        SQL[(SQLite Database)]
-    end
-    
-    API --> SQL
-    DAL --> SQL
+graph LR
+    User([User]) --> |Web| portal[Next.js Portal]
+    Admin([Admin]) --> |CLI| tui[C++ TUI Controller]
+    portal --> db[(SQLite Shared DB)]
+    tui --> db
 ```
 
+## ⚙️ Quick Start
+
+### 1. Build the C++ Engine
+Ensure you have `g++` (MinGW/GCC) installed:
+```bash
+.\compile.bat
+```
+
+### 2. Launch the Web Portal
+Set up the Node.js environment:
+```bash
+cd web
+npm install
+npm run dev -- -p 3001
+```
+
+### 3. Unified Access
+*   **Web Console**: `http://localhost:3001`
+*   **Admin CLI**: `.\library_system.exe`
+
+## 📊 Database Schema Highlights
+*   `books`: ACID-compliant inventory with genre support and availability tracking.
+*   `students`: Persistent user profiles with encrypted credential hashes.
+*   `borrowed_books`: Transactional logging for loan lifecycle management.
+*   `activity_log`: High-fidelity auditing for all system transactions.
+
 ---
-Developed with ❤️ by LuminaLib Team.
+© 2026 LuminaLib Team. Built for the next generation of knowledge management.
