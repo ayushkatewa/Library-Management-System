@@ -2,7 +2,7 @@
 
 LuminaLib is a state-of-the-art, cross-platform library management ecosystem that bridges the power of C++ with the elegance of a modern web experience. Built for institutions that demand high performance, security, and a premium user experience.
 
-![Project Banner](/C:/Users/Ayush_Katewa/.gemini/antigravity/brain/87c9b58d-db38-4d25-ba9d-a22e7c624514/homepage_full_view_1774378386013.png)
+![Project Banner](./assets/banner.png)
 
 ## 🚀 Key Features
 
