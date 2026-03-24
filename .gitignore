@@ -1,0 +1,27 @@
+# Compiled executables
+*.exe
+*.out
+library_system
+
+# Object files
+*.o
+*.obj
+
+# Data files (generated at runtime)
+books.txt
+students.txt
+activity_log.txt
+admin_config.txt
+test_books.txt
+test_students.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
